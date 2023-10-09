@@ -95,7 +95,7 @@ def getregions(ra,dec):
         regionID[ni]=int(np.where(idx)[0])
     return regionID
 
-def lens_select(Rmin, Rmax, mirror=False, HighSM = False):
+def lens_select(Rmin, Rmax, mirror=False, HighSM = False): # HighSM means higher sSFR
     
     cdat = fits.open('/mnt/home/project/cparmeshwar/Minor_project/GAMA/grpGal_smass_sSFR.fits')[1].data
     
@@ -450,7 +450,7 @@ def run_pipe(Omegam=0.315, rmin=0.03, rmax=1.0, nbins=10, randomfile = 'RandomSF
 
 if __name__ == "__main__":
     
-    run_pipe(mirror=False, HighSM = True)
+    run_pipe(mirror=False, HighSM = True)   
     run_pipe(mirror=True, HighSM = True)
 
 
